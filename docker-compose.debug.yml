@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  unitfunctionaltestthesymfony4messenger:
+    image: unitfunctionaltestthesymfony4messenger
+    build:
+      context: .
+      dockerfile: ./Dockerfile

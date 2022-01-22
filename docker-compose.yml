@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  unitfunctionaltestthesymfony4messenger:
+    image: php
+    build:
+      context: .
+      dockerfile: ./config/PHP_Dockerfile
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    ports:
+      - "8080:8080"     
+    volumes:
+      - ./logs/xdebug:/logs/xdebug
+      - ./logs/php-fpm/:/tmp/xdebug_log
+      - ./../code:/var/www/html
+
+networks:
+    default:
+        driver: bridge
+ 
